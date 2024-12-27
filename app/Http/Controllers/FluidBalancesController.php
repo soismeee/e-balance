@@ -120,7 +120,8 @@ class FluidBalancesController extends Controller
             'cairan_keluar' => $cairan_keluar,
             'iwl' => $iwl,
             'air_metabolisme' => $air_metabolisme,
-            'balance_cairan' => $balance_cairan,
+            // 'balance_cairan' => $balance_cairan,
+            'balance_cairan' => $balance_cairan > 0 ? '+' . $balance_cairan : '' . $balance_cairan,
         ]));
 
         return response()->json(['statusCode' => 200, 'message' => 'Berhasil menghitung balance cairan', 'data' => $balance_cairan > 0 ? '+' . $balance_cairan : '' . $balance_cairan]);
